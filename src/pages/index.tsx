@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Container } from './styles'
+import { ButtonRegister } from '@/components/ButtonRegister'
+import { Header } from '@/components/Header'
 
 export default function Home() {
   return (
@@ -13,18 +12,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          <span
-            style={{
-              fontSize: '5rem',
-              fontWeight: "bold",
-              color: '#ffda43',
-              margin: '2rem'
-            }}
-          >\o</span>Seja Voluntário
-        </h1>
-      </main>
+      <Container>
+        <div>
+          <Header title="Sou ONG e quero encontrar voluntário na sua cidade." />
+          <ButtonRegister title="Cadastrar-se" />
+        </div>
+        <div>
+          <Header title="Sou Voluntário e quero encontra uma ONG na minha cidade." />
+          <ButtonRegister title="Cadastrar-se" />
+        </div>
+      </Container>
     </>
   )
 }
