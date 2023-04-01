@@ -1,9 +1,22 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+
 import { Container } from './styles'
-import { ButtonRegister } from '@/components/ButtonRegister'
 import { Header } from '@/components/Header'
+import { ButtonRegister } from '@/components/ButtonRegister'
 
 export default function Home() {
+  const router = useRouter()
+
+
+  function handleRegisterONG() {
+    router.push('/RegisterONG')
+  }
+
+  function handleRegisterVoluntary() {
+    router.push('/RegisterVoluntary')
+  }
+
   return (
     <>
       <Head>
@@ -18,14 +31,14 @@ export default function Home() {
             title="ONG 🏩"
             description="Cadastre sua ONG e encontre voluntários para ajudar a transformar o mundo."
           />
-          <ButtonRegister title="Cadastrar ONG" />
+          <ButtonRegister title="Cadastrar uma ONG" onClick={handleRegisterONG} />
         </div>
         <div>
           <Header
             title="Voluntário 👤"
             description="Encontre ONGs na sua cidade e ajude a transformar o mundo."
           />
-          <ButtonRegister title="Sou Voluntário" />
+          <ButtonRegister title="Sou Voluntário" onClick={handleRegisterVoluntary} />
         </div>
       </Container>
     </>
