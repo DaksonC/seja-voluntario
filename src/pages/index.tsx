@@ -14,12 +14,18 @@ export default function Home() {
       </Head>
       <Container>
         <div>
-          <Header title="Sou ONG e quero encontrar voluntário na sua cidade." />
-          <ButtonRegister title="Cadastrar-se" />
+          <Header
+            title="ONG 🏩"
+            description="Cadastre sua ONG e encontre voluntários para ajudar a transformar o mundo."
+          />
+          <ButtonRegister title="Cadastrar ONG" />
         </div>
         <div>
-          <Header title="Sou Voluntário e quero encontra uma ONG na minha cidade." />
-          <ButtonRegister title="Cadastrar-se" />
+          <Header
+            title="Voluntário 👤"
+            description="Encontre ONGs na sua cidade e ajude a transformar o mundo."
+          />
+          <ButtonRegister title="Sou Voluntário" />
         </div>
       </Container>
     </>

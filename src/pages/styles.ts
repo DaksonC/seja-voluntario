@@ -11,7 +11,6 @@ export const Container = styled.div`
   justify-content: center;
 
   div {
-    border: 1px solid #f00;
     width: 100%;
     height: 100%;
     display: flex;
