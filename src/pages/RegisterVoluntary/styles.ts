@@ -15,10 +15,14 @@ export const ContainerRegisterVoluntary = styled.div`
   
   form {
     width: 100%;
+    max-width: 33rem;
+    padding: 2rem;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 5rem #bd93f9;
   }
 
   input {
@@ -38,6 +42,18 @@ export const ContainerRegisterVoluntary = styled.div`
     font-size: 1rem;
     margin-bottom: 1.5rem;
     margin-top: -0.5rem;
+  }
+
+  select {
+    width: 100%;
+    max-width: 30rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 0.25rem;
+    background: #c9f9f9;
+    color: #004c8c;
   }
 
   button {
@@ -63,5 +79,19 @@ export const ContainerRegisterVoluntary = styled.div`
     h1 {
       font-size: 1.5rem;
     }
+  }
+`;
+
+export const ContentSelected = styled.div`
+  width: 100%;
+  max-width: 30rem;
+  grid-template-columns: 1fr 2fr;
+  display: grid;
+  grid-gap: 1rem;
+  margin-bottom: 1rem;
+  height: 2rem;
+
+  @media (max-width: 425px) {
+   grid-template-columns: 1fr 1.5fr;
   }
 `;

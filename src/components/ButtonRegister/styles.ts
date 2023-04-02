@@ -7,7 +7,7 @@ export const ContainerButton = styled.button.attrs({
   height: 3rem;
   border: 0;
   border-radius: 0.5rem;
-  background: linear-gradient(90deg, #ff008e 0%, #ffcd1e 100%);
+  background: #6272a4;
   cursor: pointer;
 
   span {
@@ -16,9 +16,8 @@ export const ContainerButton = styled.button.attrs({
   }
 
   &:hover {
-    background: linear-gradient(90deg, #ffcd1e 0%, #ff008e 100%);
+    background: #44475a;
     border: 1px solid #fff;
-    color: #004c8c;
   }
 
   @media (max-width: 425px) {

@@ -54,13 +54,13 @@ function RegisterONG() {
             onChange={handleSelectState}
             value={selectedState}
           >
-            <option value="">Estado</option>
+            <option value="">UF</option>
             {states.map(state => (
               <option key={state.id} value={state.sigla}>{state.nome}</option>
             ))}
           </select>
           <select {...register("city", { required: true })}>
-            <option value="">Selecione uma cidade</option>
+            <option value="">Cidade</option>
             {citys.map(city => (
               <option key={city.codigo_ibge} value={city.nome}>{city.nome}</option>
             ))}

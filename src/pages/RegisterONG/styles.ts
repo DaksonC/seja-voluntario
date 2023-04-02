@@ -7,7 +7,7 @@ export const ContainerRegisterONG = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  
   h1 {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -15,10 +15,14 @@ export const ContainerRegisterONG = styled.div`
   
   form {
     width: 100%;
+    max-width: 33rem;
+    padding: 2rem;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 5rem #bd93f9;
   }
 
   input {
@@ -50,7 +54,6 @@ export const ContainerRegisterONG = styled.div`
     border-radius: 0.25rem;
     background: #c9f9f9;
     color: #004c8c;
-
   }
 
   button {
@@ -87,4 +90,8 @@ export const ContentSelected = styled.div`
   grid-gap: 1rem;
   margin-bottom: 1rem;
   height: 2rem;
+
+  @media (max-width: 425px) {
+   grid-template-columns: 1fr 1.5fr;
+  }
 `;
