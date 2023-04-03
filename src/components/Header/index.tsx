@@ -3,6 +3,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 import {
+  ButtonHome,
   ContainerHeader,
   ContentHeaderLogo,
   ContentHeaderMenu,
@@ -10,12 +11,15 @@ import {
   ContentHeaderMenuMobile,
   ContentHeaderMenuMobileItem,
   DropdownMenuTrigger,
-  LinkHome
 } from "./styles";
 import { ButtonRegister } from "../ButtonRegister";
 
 export function Header() {
   const router = useRouter()
+
+  function handleHome() {
+    router.push('/')
+  }
 
   function handleRegisterONG() {
     router.push('/RegisterONG')
@@ -32,7 +36,12 @@ export function Header() {
       <ContentHeaderLogo>Logo</ContentHeaderLogo>
       <ContentHeaderMenu>
         <ContentHeaderMenuItemDesktop>
-          <LinkHome>Home</LinkHome>
+          <ButtonHome
+            {...(isDisabled('/') && { disabled: true })}
+            onClick={handleHome}
+          >
+            Home
+          </ButtonHome>
           <ButtonRegister
             onClick={handleRegisterONG}
             title="Cadastrar ONG"
@@ -44,7 +53,6 @@ export function Header() {
             {...(isDisabled('/RegisterVoluntary') && { disabled: true })}
           />
         </ContentHeaderMenuItemDesktop>
-
         <DropdownMenu.Root>
           <DropdownMenuTrigger>
             <button className="IconButton" aria-label="Customise options">
@@ -54,7 +62,12 @@ export function Header() {
           <DropdownMenu.Portal>
             <ContentHeaderMenuMobile>
               <ContentHeaderMenuMobileItem>
-                <LinkHome>Home</LinkHome>
+                <ButtonHome
+                  {...(isDisabled('/') && { disabled: true })}
+                  onClick={handleHome}
+                >
+                  Home
+                </ButtonHome>
               </ContentHeaderMenuMobileItem>
               <ContentHeaderMenuMobileItem>
                 <ButtonRegister

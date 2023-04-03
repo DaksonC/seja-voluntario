@@ -1,7 +1,6 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Link from "next/link";
-import router from "next/router";
 import styled from "styled-components";
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 export const ContainerHeader = styled.div`
   width: 100vw;
@@ -28,7 +27,7 @@ export const ContentHeaderMenu = styled.div`
   justify-content: flex-end;
   gap: 1rem;
   padding: 0 2rem;
-  `;
+`;
 
 export const ContentHeaderMenuItemDesktop = styled.div`
   display: block;
@@ -96,20 +95,22 @@ export const Logo = styled.img`
   height: 5rem;
 `;
 
-const isActive = (href: string) => router.pathname === href;
-
-export const LinkHome = styled(Link).attrs({
-  href: "/"
-})`
+export const ButtonHome = styled.button`
   text-decoration: none;
-  color: #44475a;
   font-size: 1.5rem;
-  font-weight: 700;
-
+  font-weight: 600;
+  color: #44475a;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  
+  
   &:hover {
     color: #bd93f9;
   }
 
-  ${(props) => isActive(props.href) && "color: #bd93f9;"}
+  &:disabled {
+    color: #bd93f9;
+  }
 `;
 
