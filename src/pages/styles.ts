@@ -3,23 +3,19 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  padding: 1rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
-  div {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  h1 {
+    font-size: 3rem;
+    color: #44475a;
   }
 
   @media (max-width: 425px) {
-    grid-template-columns: 1fr;
+    h1 {
+      font-size: 2rem;
+    }
   }
 `;

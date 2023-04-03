@@ -1,51 +1,115 @@
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import Link from "next/link";
+import router from "next/router";
 import styled from "styled-components";
 
-interface IContentImgProps extends React.HTMLAttributes<HTMLDivElement> {
-  img: string;
-}
-
 export const ContainerHeader = styled.div`
-  max-width: 30rem;
-  max-height: 25rem;
-  text-align: center;
-  border-radius: 1rem;
-  margin: 1.5rem auto;
-  box-shadow: 0 0 5rem #bd93f9;
+  width: 100vw;
+  height: 7rem;
+  background: #282a36;
+  box-shadow: 0 0 1rem #bd93f9;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
 `;
 
-export const ContentImg = styled.div<IContentImgProps>`
-  background-image: url(${(props) => props.img});
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;  
-  border-radius: 1rem 1rem 0 0;  
+export const ContentHeaderLogo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;  
 `;
 
-export const ContentText = styled.div`
-  border-radius: 0 0 1rem 1rem;
-  padding: 1rem;
-  text-align: center;
-  margin-top: -3rem;
+export const ContentHeaderMenu = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0 2rem;
+  `;
 
-  h1 {
-    font-size: 2.5rem;
-    color: #f8f8f2;
-    margin-bottom: 1rem;
+export const ContentHeaderMenuItemDesktop = styled.div`
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  @media (max-width: 426px) {
+    display: none;
   }
+`;
 
-  p {
-    font-size: 1.5rem;
-    color: #f8f8f2;
+export const DropdownMenuTrigger = styled(DropdownMenu.Trigger)`
+  background: transparent;
+  border: 0;
+
+  button {
+    display: none;
   }
 
   @media (max-width: 425px) {
-    margin-top: -1rem;
-    h1 {
+    button {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
       font-size: 1.5rem;
-    }
-    p{
-      font-size: 1rem;
+      color: #bd93f9;
+      background: #44475a;
+      
+      &:hover {
+        background: #bd93f9;
+        color: #44475a;
+      }
     }
   }
+`;
+
+export const ContentHeaderMenuMobile = styled(DropdownMenu.Content)`
+  width: 100vw;
+  height: auto;
+  background: #282a36;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+`;
+
+export const ContentHeaderMenuMobileItem = styled(DropdownMenu.Item)`
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Logo = styled.img`
+  width: 5rem;
+  height: 5rem;
+`;
+
+const isActive = (href: string) => router.pathname === href;
+
+export const LinkHome = styled(Link).attrs({
+  href: "/"
+})`
+  text-decoration: none;
+  color: #44475a;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  &:hover {
+    color: #bd93f9;
+  }
+
+  ${(props) => isActive(props.href) && "color: #bd93f9;"}
 `;
 

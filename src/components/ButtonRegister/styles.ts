@@ -7,17 +7,22 @@ export const ContainerButton = styled.button.attrs({
   height: 3rem;
   border: 0;
   border-radius: 0.5rem;
-  background: #6272a4;
+  background: #44475a;
   cursor: pointer;
-
+  
   span {
     font-size: 1rem;
     font-weight: bold;
   }
-
+  
   &:hover {
-    background: #44475a;
-    border: 1px solid #fff;
+    background: #bd93f9;
+  }
+
+  &:disabled {
+    background: #282a36;
+    border: 1px solid #44475a;
+    cursor: not-allowed;
   }
 
   @media (max-width: 425px) {

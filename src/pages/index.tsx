@@ -1,21 +1,9 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 
 import { Container } from './styles'
 import { Header } from '@/components/Header'
-import { ButtonRegister } from '@/components/ButtonRegister'
 
 export default function Home() {
-  const router = useRouter()
-
-
-  function handleRegisterONG() {
-    router.push('/RegisterONG')
-  }
-
-  function handleRegisterVoluntary() {
-    router.push('/RegisterVoluntary')
-  }
 
   return (
     <>
@@ -25,23 +13,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
+      <Header />
       <Container>
-        <div>
-          <Header
-            title="ONG"
-            description="Cadastre sua ONG e encontre voluntários para ajudar a transformar o mundo."
-            url="ong.jpg"
-          />
-          <ButtonRegister title="Cadastrar ONG 🏩" onClick={handleRegisterONG} />
-        </div>
-        <div>
-          <Header
-            title="Voluntário"
-            description="Encontre ONGs na sua cidade e ajude a transformar o mundo."
-            url="voluntario.jpg"
-          />
-          <ButtonRegister title="Sou Voluntário 👤" onClick={handleRegisterVoluntary} />
-        </div>
+        <h1>
+          Juntos pela solidariedade: cadastre sua ONG ou seja um voluntário e ajude a fazer a diferença na vida de quem mais precisa!
+        </h1>
       </Container>
     </>
   )
