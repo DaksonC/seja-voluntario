@@ -8,6 +8,7 @@ export const ContainerButton = styled.button.attrs({
   border: 0;
   border-radius: 0.5rem;
   background: #44475a;
+  color: #fff;
   cursor: pointer;
   
   span {
@@ -17,10 +18,12 @@ export const ContainerButton = styled.button.attrs({
   
   &:hover {
     background: #bd93f9;
+    color: #44475a;
   }
 
   &:disabled {
     background: #282a36;
+    color: #44475a;
     border: 1px solid #44475a;
     cursor: not-allowed;
   }

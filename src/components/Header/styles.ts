@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
@@ -18,7 +17,16 @@ export const ContentHeaderLogo = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 0 1rem;  
+  padding: 0 1rem;
+`;
+
+export const ImageLogo = styled.img.attrs({
+  src: "/next.svg",
+  alt: "Logo",
+})`
+  width: 7rem;
+  height: auto;
+  color: #bd93f9;
 `;
 
 export const ContentHeaderMenu = styled.div`
@@ -36,7 +44,7 @@ export const ContentHeaderMenuItemDesktop = styled.div`
   justify-content: center;
   gap: 1rem;
 
-  @media (max-width: 426px) {
+  @media (max-width: 769px) {
     display: none;
   }
 `;
@@ -49,7 +57,7 @@ export const DropdownMenuTrigger = styled(DropdownMenu.Trigger)`
     display: none;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     button {
       display: block;
       width: 2rem;
@@ -90,11 +98,6 @@ export const ContentHeaderMenuMobileItem = styled(DropdownMenu.Item)`
   justify-content: center;
 `;
 
-export const Logo = styled.img`
-  width: 5rem;
-  height: 5rem;
-`;
-
 export const ButtonHome = styled.button`
   text-decoration: none;
   font-size: 1.5rem;
@@ -102,6 +105,7 @@ export const ButtonHome = styled.button`
   color: #44475a;
   background: transparent;
   border: 0;
+  padding: 0.5rem;
   cursor: pointer;
   
   

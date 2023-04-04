@@ -1,9 +1,11 @@
+import Modal from "react-modal";
 import { useState } from "react";
-import { ContainerRegisterVoluntary, ContentSelected } from "./styles";
 import { useForm, SubmitHandler } from "react-hook-form";
+
 import { useCitys } from "@/hooks/useCitys";
-import { useStates } from "@/hooks/useStates";
 import { Header } from "@/components/Header";
+import { useStates } from "@/hooks/useStates";
+import { ButtonModalCancel, ButtonModalOK, ContainerRegisterVoluntary, ContentSelected, LabelModal, customStyles } from "./styles";
 
 type IRegisterVoluntaryData = {
   name: string;
@@ -14,8 +16,12 @@ type IRegisterVoluntaryData = {
 };
 
 function RegisterVoluntary() {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   const { register, handleSubmit, watch, formState: { errors } } = useForm<IRegisterVoluntaryData>();
-  const onSubmit: SubmitHandler<IRegisterVoluntaryData> = data => console.log(data);
+  const onSubmit: SubmitHandler<IRegisterVoluntaryData> = data => {
+    openModal();
+  };
 
   const [selectedState, setSelectedState] = useState("");
 
@@ -24,6 +30,19 @@ function RegisterVoluntary() {
 
   function handleSelectState(event: React.ChangeEvent<HTMLSelectElement>) {
     setSelectedState(event.target.value);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function handleConfirmFormData() {
+    alert("Dados confirmados com sucesso!");
+    closeModal();
   }
 
   return (
@@ -73,6 +92,19 @@ function RegisterVoluntary() {
           <button type="submit">Salvar</button>
         </form>
       </ContainerRegisterVoluntary>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <LabelModal>
+          Por favor, confirme os seu dados, porque não será possível altera-los após a confirmação.
+        </LabelModal>
+        <form>
+          <ButtonModalCancel onClick={closeModal}>Cancelar</ButtonModalCancel>
+          <ButtonModalOK type="button" onClick={handleConfirmFormData}>OK</ButtonModalOK>
+        </form>
+      </Modal>
     </>
   );
 }

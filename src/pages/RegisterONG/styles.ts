@@ -95,3 +95,80 @@ export const ContentSelected = styled.div`
    grid-template-columns: 1fr 1.5fr;
   }
 `;
+
+
+export const LabelModal = styled.label`
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ff5555;
+
+  @media (max-width: 425px) {
+    font-size: 1rem;
+  }
+`;
+
+export const ButtonModalCancel = styled.button`
+  width: 100%;
+  max-width: 15rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #fff;
+  background: #ff5555;
+  font-weight: 600;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.5);
+    color: #004c8c;
+  }
+`;
+
+export const ButtonModalOK = styled.button`
+  width: 100%;
+  max-width: 15rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #fff;
+  background: #50fa7b;
+  font-weight: 600;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.5);
+    color: #004c8c;
+  }
+`;
+
+export const customStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  },
+  content: {
+    top: '83%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+
+    width: '100%',
+    height: 'auto',
+    padding: '2rem',
+    border: 'none',
+    backgroundColor: '#282a36',
+
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridTemplateRows: '1fr',
+    gap: '1rem',
+    alineItems: 'center',
+    justifyItems: 'center',
+  },
+};

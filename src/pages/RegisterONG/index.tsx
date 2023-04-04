@@ -1,9 +1,10 @@
 import { useState } from "react";
+import Modal from "react-modal";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import { useCitys } from "@/hooks/useCitys";
 import { useStates } from "@/hooks/useStates";
-import { ContainerRegisterONG, ContentSelected } from "./styles";
+import { ButtonModalCancel, ButtonModalOK, ContainerRegisterONG, ContentSelected, LabelModal, customStyles } from "./styles";
 import { Header } from "@/components/Header";
 
 type IRegisterONGData = {
@@ -15,8 +16,12 @@ type IRegisterONGData = {
 };
 
 function RegisterONG() {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   const { register, handleSubmit, formState: { errors } } = useForm<IRegisterONGData>();
-  const onSubmit: SubmitHandler<IRegisterONGData> = data => console.log(data);
+  const onSubmit: SubmitHandler<IRegisterONGData> = data => {
+    openModal();
+  }
 
   const [selectedState, setSelectedState] = useState("");
 
@@ -25,6 +30,19 @@ function RegisterONG() {
 
   function handleSelectState(event: React.ChangeEvent<HTMLSelectElement>) {
     setSelectedState(event.target.value);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function handleConfirmFormData() {
+    alert("Dados confirmados com sucesso!");
+    closeModal();
   }
 
   return (
@@ -74,6 +92,19 @@ function RegisterONG() {
           <button type="submit">Salvar</button>
         </form>
       </ContainerRegisterONG>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <LabelModal>
+          Por favor, confirme os dados ONG, porque não será possível altera-los após a confirmação.
+        </LabelModal>
+        <form>
+          <ButtonModalCancel onClick={closeModal}>Cancelar</ButtonModalCancel>
+          <ButtonModalOK type="button" onClick={handleConfirmFormData}>OK</ButtonModalOK>
+        </form>
+      </Modal>
     </>
   );
 }

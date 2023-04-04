@@ -11,8 +11,9 @@ import {
   ContentHeaderMenuMobile,
   ContentHeaderMenuMobileItem,
   DropdownMenuTrigger,
+  ImageLogo,
 } from "./styles";
-import { ButtonRegister } from "../ButtonRegister";
+import { ButtonRegister } from "../ButtonRegister";;
 
 export function Header() {
   const router = useRouter()
@@ -33,7 +34,9 @@ export function Header() {
 
   return (
     <ContainerHeader>
-      <ContentHeaderLogo>Logo</ContentHeaderLogo>
+      <ContentHeaderLogo>
+        <ImageLogo />
+      </ContentHeaderLogo>
       <ContentHeaderMenu>
         <ContentHeaderMenuItemDesktop>
           <ButtonHome
