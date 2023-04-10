@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerButton = styled.button.attrs({
   type: "button",
 })`
-  width: 12rem;
+  width: 14rem;
   height: 3rem;
   border: 0;
   border-radius: 0.5rem;

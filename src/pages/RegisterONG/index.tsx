@@ -49,7 +49,7 @@ function RegisterONG() {
     <>
       <Header />
       <ContainerRegisterONG>
-        <h1>Cadastro de ONG 🏩</h1>
+        <h1>Cadastro de ONG 🏥</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             {...register("name", { required: true })}
@@ -63,11 +63,11 @@ function RegisterONG() {
           />
           {errors.email && <span>E-mail da ONG é obrigatório!</span>}
 
-          <input
-            {...register("activity", { required: true })}
+          <textarea
+            {...register("activity", { required: true, maxLength: 250 })}
             placeholder="Atividade que a ONG desenvolve"
           />
-          {errors.activity && <span>Atividade que a ONG desenvolve é obrigatória!</span>}
+          {errors.activity && <span>Atividade que a ONG desenvolve é obrigatória! Máximo de 250 caracteres!</span>}
 
           <ContentSelected>
             <select
@@ -98,7 +98,7 @@ function RegisterONG() {
         style={customStyles}
       >
         <LabelModal>
-          Por favor, confirme os dados ONG, porque não será possível altera-los após a confirmação.
+          Por favor, confirme os dados ONG, porque não será possível alterá-los após a confirmação.
         </LabelModal>
         <form>
           <ButtonModalCancel onClick={closeModal}>Cancelar</ButtonModalCancel>

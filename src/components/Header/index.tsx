@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { BsGlobeAmericas } from "react-icons/bs";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
@@ -35,7 +36,10 @@ export function Header() {
   return (
     <ContainerHeader>
       <ContentHeaderLogo>
-        <ImageLogo />
+        <ImageLogo>
+          <BsGlobeAmericas />
+          <h3>Juntos, podemos...</h3>
+        </ImageLogo>
       </ContentHeaderLogo>
       <ContentHeaderMenu>
         <ContentHeaderMenuItemDesktop>
@@ -47,12 +51,12 @@ export function Header() {
           </ButtonHome>
           <ButtonRegister
             onClick={handleRegisterONG}
-            title="Cadastrar ONG"
+            title="Cadastrar ONG 🏥"
             {...(isDisabled('/RegisterONG') && { disabled: true })}
           />
           <ButtonRegister
             onClick={handleRegisterVoluntary}
-            title="Cadastrar Voluntário"
+            title="Cadastrar Voluntário 👤"
             {...(isDisabled('/RegisterVoluntary') && { disabled: true })}
           />
         </ContentHeaderMenuItemDesktop>
@@ -75,14 +79,14 @@ export function Header() {
               <ContentHeaderMenuMobileItem>
                 <ButtonRegister
                   onClick={handleRegisterONG}
-                  title="Cadastrar ONG"
+                  title="Cadastrar ONG 🏥"
                   {...(isDisabled('/RegisterONG') && { disabled: true })}
                 />
               </ContentHeaderMenuMobileItem>
               <ContentHeaderMenuMobileItem>
                 <ButtonRegister
                   onClick={handleRegisterVoluntary}
-                  title="Cadastrar Voluntário"
+                  title="Cadastrar Voluntário 👤"
                   {...(isDisabled('/RegisterVoluntary') && { disabled: true })}
                 />
               </ContentHeaderMenuMobileItem>

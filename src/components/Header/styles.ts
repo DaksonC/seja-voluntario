@@ -20,13 +20,15 @@ export const ContentHeaderLogo = styled.div`
   padding: 0 1rem;
 `;
 
-export const ImageLogo = styled.img.attrs({
-  src: "/next.svg",
-  alt: "Logo",
-})`
+export const ImageLogo = styled.div`
   width: 7rem;
   height: auto;
   color: #bd93f9;
+  font-size: 3rem;
+
+  h3 {
+    font-size: 0.65rem;
+  }
 `;
 
 export const ContentHeaderMenu = styled.div`

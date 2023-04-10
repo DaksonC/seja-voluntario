@@ -37,6 +37,18 @@ export const ContainerRegisterVoluntary = styled.div`
     color: #004c8c;
   }
 
+  textarea {
+    width: 100%;
+    max-width: 30rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 0.25rem;
+    background: #c9f9f9;
+    color: #004c8c;
+  }
+
   span {
     color: #ff5555;
     font-size: 1rem;
@@ -74,10 +86,15 @@ export const ContainerRegisterVoluntary = styled.div`
       color: #004c8c;
     }
   }
-
+  
   @media (max-width: 425px) {
     h1 {
       font-size: 1.5rem;
+    }
+    
+    button {
+      margin-top: 3.5rem;
+      margin-bottom: 0;
     }
   }
 `;
@@ -85,14 +102,14 @@ export const ContainerRegisterVoluntary = styled.div`
 export const ContentSelected = styled.div`
   width: 100%;
   max-width: 30rem;
-  grid-template-columns: 1fr 2fr;
   display: grid;
-  grid-gap: 1rem;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
   margin-bottom: 1rem;
   height: 2rem;
 
   @media (max-width: 425px) {
-   grid-template-columns: 1fr 1.5fr;
+    display: block;    
   }
 `;
 

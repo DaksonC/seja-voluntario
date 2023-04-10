@@ -63,11 +63,11 @@ function RegisterVoluntary() {
           />
           {errors.email && <span>E-mail do vonluntário é obrigatório!</span>}
 
-          <input
-            {...register("occupation", { required: true })}
+          <textarea
+            {...register("occupation", { required: true, maxLength: 250 })}
             placeholder="Profissão"
           />
-          {errors.occupation && <span>A profissão do voluntário é obrigatória!</span>}
+          {errors.occupation && <span>A profissão do voluntário é obrigatória! Máximo de 250 caracteres!</span>}
 
           <ContentSelected>
             <select
@@ -98,7 +98,7 @@ function RegisterVoluntary() {
         style={customStyles}
       >
         <LabelModal>
-          Por favor, confirme os seu dados, porque não será possível altera-los após a confirmação.
+          Por favor, confirme os seu dados, porque não será possível alterá-los após a confirmação.
         </LabelModal>
         <form>
           <ButtonModalCancel onClick={closeModal}>Cancelar</ButtonModalCancel>

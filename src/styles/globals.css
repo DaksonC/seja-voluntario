@@ -72,6 +72,7 @@
 body {
   overflow-x: hidden;
   background-image: linear-gradient(to bottom, #282a36, #44475a);
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
