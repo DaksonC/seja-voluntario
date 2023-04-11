@@ -1,16 +1,25 @@
-import { useState } from "react";
+import axios from "axios";
 import Modal from "react-modal";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import { useCitys } from "@/hooks/useCitys";
-import { useStates } from "@/hooks/useStates";
-import { ButtonModalCancel, ButtonModalOK, ContainerRegisterONG, ContentSelected, LabelModal, customStyles } from "./styles";
 import { Header } from "@/components/Header";
+import { useStates } from "@/hooks/useStates";
+
+import {
+  ButtonModalCancel,
+  ButtonModalOK,
+  ContainerRegisterONG,
+  ContentSelected,
+  LabelModal,
+  customStyles
+} from "./styles";
 
 type IRegisterONGData = {
   name: string;
   email: string;
-  activity: string;
+  description: string;
   city: string;
   state: string;
 };
@@ -18,7 +27,7 @@ type IRegisterONGData = {
 function RegisterONG() {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  const { register, handleSubmit, formState: { errors } } = useForm<IRegisterONGData>();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<IRegisterONGData>();
   const onSubmit: SubmitHandler<IRegisterONGData> = data => {
     openModal();
   }
@@ -40,9 +49,15 @@ function RegisterONG() {
     setIsOpen(false);
   }
 
-  function handleConfirmFormData() {
-    alert("Dados confirmados com sucesso!");
-    closeModal();
+  async function handleConfirmFormData(data: IRegisterONGData | any) {
+    try {
+      const response = await axios.post("/api/ongs", data);
+      closeModal();
+      reset()
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -64,10 +79,10 @@ function RegisterONG() {
           {errors.email && <span>E-mail da ONG é obrigatório!</span>}
 
           <textarea
-            {...register("activity", { required: true, maxLength: 250 })}
+            {...register("description", { required: true, maxLength: 250 })}
             placeholder="Atividade que a ONG desenvolve"
           />
-          {errors.activity && <span>Atividade que a ONG desenvolve é obrigatória! Máximo de 250 caracteres!</span>}
+          {errors.description && <span>Atividade que a ONG desenvolve é obrigatória! Máximo de 250 caracteres!</span>}
 
           <ContentSelected>
             <select
@@ -100,9 +115,9 @@ function RegisterONG() {
         <LabelModal>
           Por favor, confirme os dados ONG, porque não será possível alterá-los após a confirmação.
         </LabelModal>
-        <form>
+        <form onSubmit={handleSubmit(handleConfirmFormData)}>
           <ButtonModalCancel onClick={closeModal}>Cancelar</ButtonModalCancel>
-          <ButtonModalOK type="button" onClick={handleConfirmFormData}>OK</ButtonModalOK>
+          <ButtonModalOK type="submit">OK</ButtonModalOK>
         </form>
       </Modal>
     </>

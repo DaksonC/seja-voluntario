@@ -6,11 +6,12 @@ import { useCitys } from "@/hooks/useCitys";
 import { Header } from "@/components/Header";
 import { useStates } from "@/hooks/useStates";
 import { ButtonModalCancel, ButtonModalOK, ContainerRegisterVoluntary, ContentSelected, LabelModal, customStyles } from "./styles";
+import axios from "axios";
 
 type IRegisterVoluntaryData = {
   name: string;
   email: string;
-  occupation: string;
+  description: string;
   city: string;
   state: string;
 };
@@ -18,7 +19,7 @@ type IRegisterVoluntaryData = {
 function RegisterVoluntary() {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<IRegisterVoluntaryData>();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<IRegisterVoluntaryData>();
   const onSubmit: SubmitHandler<IRegisterVoluntaryData> = data => {
     openModal();
   };
@@ -40,9 +41,15 @@ function RegisterVoluntary() {
     setIsOpen(false);
   }
 
-  function handleConfirmFormData() {
-    alert("Dados confirmados com sucesso!");
-    closeModal();
+  async function handleConfirmFormData(data: IRegisterVoluntaryData | any) {
+    try {
+      const response = await axios.post("/api/voluntarys", data);
+      closeModal();
+      reset()
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -64,10 +71,10 @@ function RegisterVoluntary() {
           {errors.email && <span>E-mail do vonluntário é obrigatório!</span>}
 
           <textarea
-            {...register("occupation", { required: true, maxLength: 250 })}
-            placeholder="Profissão"
+            {...register("description", { required: true, maxLength: 250 })}
+            placeholder="Descreva sua disponibilidade de horário e o que gosta de fazer."
           />
-          {errors.occupation && <span>A profissão do voluntário é obrigatória! Máximo de 250 caracteres!</span>}
+          {errors.description && <span>Descrever a disponibilidade é obrigatória! Máximo de 250 caracteres!</span>}
 
           <ContentSelected>
             <select
@@ -100,9 +107,9 @@ function RegisterVoluntary() {
         <LabelModal>
           Por favor, confirme os seu dados, porque não será possível alterá-los após a confirmação.
         </LabelModal>
-        <form>
+        <form onSubmit={handleSubmit(handleConfirmFormData)}>
           <ButtonModalCancel onClick={closeModal}>Cancelar</ButtonModalCancel>
-          <ButtonModalOK type="button" onClick={handleConfirmFormData}>OK</ButtonModalOK>
+          <ButtonModalOK type="submit">OK</ButtonModalOK>
         </form>
       </Modal>
     </>
