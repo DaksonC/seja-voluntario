@@ -12,6 +12,7 @@ interface Ong {
   name: string;
   email: string;
   city: string;
+  description: string;
 }
 
 // Cria o transporter do nodemailer
@@ -58,7 +59,17 @@ export async function sendEmailToONGIfNeeded(voluntarys: Voluntarys): Promise<vo
   }
 }
 
-// Exemplo de como usar a função sendEmailToONGIfNeeded após salvar o voluntário no banco de dados
-// Suponha que o voluntário esteja armazenado em uma variável chamada "voluntarys"
-// await sendEmailToONGIfNeeded(voluntarys);
-// console.log('Email enviado para a ONG, se aplicável.');
+export async function sendEmailToONGOnRegistration(ong: Ong): Promise<void> {
+  const connection = await pool.getConnection();
+  try {
+    const [rows] = await connection.query('SELECT * FROM voluntarys WHERE city = ?', [ong.city]) as unknown as [Voluntarys[]];
+    if (rows.length > 0) {
+      const promises = rows.map(voluntary => sendEmailToONG(voluntary, ong));
+      await Promise.all(promises);
+    }
+  } catch (err) {
+    console.error('Erro ao buscar voluntários do banco de dados:', err);
+  } finally {
+    connection.release();
+  }
+}

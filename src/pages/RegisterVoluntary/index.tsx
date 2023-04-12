@@ -1,12 +1,20 @@
+import axios from "axios";
 import Modal from "react-modal";
 import { useState } from "react";
+import { toast } from 'react-toastify';
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import { useCitys } from "@/hooks/useCitys";
 import { Header } from "@/components/Header";
 import { useStates } from "@/hooks/useStates";
-import { ButtonModalCancel, ButtonModalOK, ContainerRegisterVoluntary, ContentSelected, LabelModal, customStyles } from "./styles";
-import axios from "axios";
+import {
+  ButtonModalCancel,
+  ButtonModalOK,
+  ContainerRegisterVoluntary,
+  ContentSelected,
+  LabelModal,
+  customStyles
+} from "./styles";
 
 type IRegisterVoluntaryData = {
   name: string;
@@ -43,10 +51,10 @@ function RegisterVoluntary() {
 
   async function handleConfirmFormData(data: IRegisterVoluntaryData | any) {
     try {
-      const response = await axios.post("/api/voluntarys", data);
+      await axios.post("/api/voluntarys", data);
       closeModal();
+      toast.success('Cadastro realizado com sucesso!');
       reset()
-      console.log(response);
     } catch (error) {
       console.log(error);
     }

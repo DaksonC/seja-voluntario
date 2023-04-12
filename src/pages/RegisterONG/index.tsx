@@ -1,6 +1,7 @@
 import axios from "axios";
 import Modal from "react-modal";
 import { useState } from "react";
+import { toast } from 'react-toastify';
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import { useCitys } from "@/hooks/useCitys";
@@ -51,10 +52,10 @@ function RegisterONG() {
 
   async function handleConfirmFormData(data: IRegisterONGData | any) {
     try {
-      const response = await axios.post("/api/ongs", data);
+      await axios.post("/api/ongs", data);
+      toast.success('Cadastro realizado com sucesso!');
       closeModal();
       reset()
-      console.log(response);
     } catch (error) {
       console.log(error);
     }

@@ -1,4 +1,5 @@
 import { pool } from "@/config/db";
+import { sendEmailToONGOnRegistration } from "@/server/email";
 import { ResultSetHeader } from "mysql2";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -36,7 +37,10 @@ async function postONGs(req: NextApiRequest, res: NextApiResponse) {
       city,
       state,
     })
-    console.log(result)
+
+    if (result.affectedRows === 1) {
+      await sendEmailToONGOnRegistration({ name, email, city, description })
+    }
 
     return res.status(200).json({ name, email, description, city, state, id: result.insertId })
   } catch (error) {
