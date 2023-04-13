@@ -38,8 +38,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 # Projeto Integrador
-## Engenharia da Computação
-### DRPMARILIA-PJI110-SALA-001GRUPO-008
+- Engenharia da Computação
+- DRPMARILIA-PJI110-SALA-001GRUPO-008
  
 A disciplina apresenta um projeto a ser realizado em grupo que concilia os diversos conteúdos abordados em outras disciplinas até o presente momento.
 
@@ -55,11 +55,11 @@ Logo, cada grupo deverá utilizar os conhecimentos adquiridos para implementar u
 
 Como este é o primeiro projeto integrador que vocês realizam, vocês devem ficar atentos à metodologia geral, com etapas que serão seguidas e documentos que devem ser entregues neste e nos próximos Projetos Integradores, independentemente do tema desenvolvido. No menu lateral vocês encontram os modelos de documento, as orientações gerais e rubricas de avaliação.
 
-### tecnologias usadas:
+### Tecnologias usadas:
 - Next.js
 - TypeScript
 - Axios
 - Nodemeiler
 
 # Demonstrativo do projeto
-
+https://user-images.githubusercontent.com/81385265/231895455-b1056eb6-3cfd-478d-bac1-cf8ba89349f8.mp4
