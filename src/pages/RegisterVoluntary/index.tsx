@@ -101,8 +101,8 @@ function RegisterVoluntary() {
                 <option key={city.codigo_ibge} value={city.nome}>{city.nome}</option>
               ))}
             </select>
+            {errors.city && <span>Cidade do voluntário é obrigatória!</span>}
           </ContentSelected>
-          {errors.city && <span>Cidade do voluntário é obrigatória!</span>}
 
           <button type="submit">Salvar</button>
         </form>

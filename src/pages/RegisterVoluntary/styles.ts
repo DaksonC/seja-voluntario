@@ -54,6 +54,7 @@ export const ContainerRegisterVoluntary = styled.div`
     font-size: 1rem;
     margin-bottom: 1.5rem;
     margin-top: -0.5rem;
+    text-align: center;
   }
 
   select {
@@ -93,8 +94,16 @@ export const ContainerRegisterVoluntary = styled.div`
     }
     
     button {
-      margin-top: 3.5rem;
+      margin-top: 4.5rem;
       margin-bottom: 0;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+
+    select {
+      margin-bottom: 0.5rem;
     }
   }
 `;
@@ -107,6 +116,7 @@ export const ContentSelected = styled.div`
   gap: 1rem;
   margin-bottom: 1rem;
   height: 2rem;
+  text-align: center;
 
   @media (max-width: 425px) {
     display: block;    
