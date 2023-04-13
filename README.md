@@ -37,7 +37,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-# Projeto Integrador
+<hr />
+<hr />
+
+# Projeto Integrador I
 - Engenharia da Computação
 - DRPMARILIA-PJI110-SALA-001GRUPO-008
  
@@ -59,9 +62,10 @@ Como este é o primeiro projeto integrador que vocês realizam, vocês devem fic
 - Next.js
 - TypeScript
 - Axios
-- Nodemeiler
+- Nodemailer
+- MySQL
 
-# Demonstrativo do projeto
+# Demonstrativo
 https://user-images.githubusercontent.com/81385265/231895455-b1056eb6-3cfd-478d-bac1-cf8ba89349f8.mp4
 
 ## Quem participa desse projeto e com qual função?
