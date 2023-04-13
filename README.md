@@ -15,7 +15,7 @@ apresentar pelo menos um protótipo de um sistema web como uma prova de conceito
 desenvolver tal protótipo por meio da implementação de sistemas que utilizem noções de banco de dados dentro de um framework web.
 Logo, cada grupo deverá utilizar os conhecimentos adquiridos para implementar um sistema computacional que se caracterize como uma prova de conceito para um framework web.
 
-Como este é o primeiro projeto integrador que vocês realizam, vocês devem ficar atentos à metodologia geral, com etapas que serão seguidas e documentos que devem ser entregues neste e nos próximos Projetos Integradores, independentemente do tema desenvolvido. No menu lateral vocês encontram os modelos de documento, as orientações gerais e rubricas de avaliação.
+Como este é o primeiro projeto integrador que vocês realizam, vocês devem ficar atentos à metodologia geral, com etapas que serão seguidas e documentos que devem ser entregues neste e nos próximos Projetos Integradores, independentemente do tema desenvolvido. 
 
 ### Tecnologias usadas:
 - Next.js
