@@ -63,3 +63,9 @@ Como este é o primeiro projeto integrador que vocês realizam, vocês devem fic
 
 # Demonstrativo do projeto
 https://user-images.githubusercontent.com/81385265/231895455-b1056eb6-3cfd-478d-bac1-cf8ba89349f8.mp4
+
+## Quem participa desse projeto e com qual função?
+
+| [<img src="https://avatars.githubusercontent.com/u/81385265?v=4" width=115><br><sub>Dakson Cruz</sub>](https://github.com/DaksonC) |
+| :---: |
+|<sub>Full Stack</sub>|
