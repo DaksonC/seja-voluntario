@@ -36,3 +36,30 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Projeto Integrador
+## Engenharia da Computação
+### DRPMARILIA-PJI110-SALA-001GRUPO-008
+ 
+A disciplina apresenta um projeto a ser realizado em grupo que concilia os diversos conteúdos abordados em outras disciplinas até o presente momento.
+
+O tema do Projeto Integrador I é “Desenvolver um software com framework web que utilize noções de banco de dados, praticando controle de versão”. 
+
+Como esta atividade será realizada?
+
+Apresentamos aqui algumas orientações e sugestões sobre como o projeto deve ser desenvolvido a cada quinzena para que o objetivo final da disciplina seja atingido. Para isso, enfatizamos que, ao final da disciplina, os grupos devem:
+
+apresentar pelo menos um protótipo de um sistema web como uma prova de conceito para a solução web proposta;
+desenvolver tal protótipo por meio da implementação de sistemas que utilizem noções de banco de dados dentro de um framework web.
+Logo, cada grupo deverá utilizar os conhecimentos adquiridos para implementar um sistema computacional que se caracterize como uma prova de conceito para um framework web.
+
+Como este é o primeiro projeto integrador que vocês realizam, vocês devem ficar atentos à metodologia geral, com etapas que serão seguidas e documentos que devem ser entregues neste e nos próximos Projetos Integradores, independentemente do tema desenvolvido. No menu lateral vocês encontram os modelos de documento, as orientações gerais e rubricas de avaliação.
+
+### tecnologias usadas:
+- Next.js
+- TypeScript
+- Axios
+- Nodemeiler
+
+# Demonstrativo do projeto
+
