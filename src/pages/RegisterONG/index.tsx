@@ -1,12 +1,12 @@
-import axios from "axios";
-import Modal from "react-modal";
-import { useState } from "react";
-import { toast } from 'react-toastify';
-import { useForm, SubmitHandler } from "react-hook-form";
+import axios from 'axios'
+import Modal from 'react-modal'
+import { ChangeEvent, useState } from 'react'
+import { toast } from 'react-toastify'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
-import { useCitys } from "@/hooks/useCitys";
-import { Header } from "@/components/Header";
-import { useStates } from "@/hooks/useStates";
+import { useCitys } from '@/hooks/useCitys'
+import { Header } from '@/components/Header'
+import { useStates } from '@/hooks/useStates'
 
 import {
   ButtonModalCancel,
@@ -14,50 +14,55 @@ import {
   ContainerRegisterONG,
   ContentSelected,
   LabelModal,
-  customStyles
-} from "./styles";
+  customStyles,
+} from './styles'
 
 type IRegisterONGData = {
-  name: string;
-  email: string;
-  description: string;
-  city: string;
-  state: string;
-};
+  name: string
+  email: string
+  description: string
+  city: string
+  state: string
+}
 
 function RegisterONG() {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false)
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<IRegisterONGData>();
-  const onSubmit: SubmitHandler<IRegisterONGData> = data => {
-    openModal();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<IRegisterONGData>()
+  const onSubmit: SubmitHandler<IRegisterONGData> = (data) => {
+    openModal()
   }
 
-  const [selectedState, setSelectedState] = useState("");
+  const [selectedState, setSelectedState] = useState('')
 
-  const citys = useCitys({ uf: selectedState });
-  const states = useStates();
+  const citys = useCitys({ uf: selectedState })
+  const states = useStates()
 
-  function handleSelectState(event: React.ChangeEvent<HTMLSelectElement>) {
-    setSelectedState(event.target.value);
+  function handleSelectState(event: ChangeEvent<HTMLSelectElement>) {
+    setSelectedState(event.target.value)
   }
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   async function handleConfirmFormData(data: IRegisterONGData | any) {
     try {
-      await axios.post("/api/ongs", data);
-      toast.success('Cadastro realizado com sucesso!');
-      closeModal();
+      await axios.post('/api/ongs', data)
+      toast.success('Cadastro realizado com sucesso!')
+      closeModal()
       reset()
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
 
@@ -68,38 +73,47 @@ function RegisterONG() {
         <h1>Cadastro de ONG 🏥</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
-            {...register("name", { required: true })}
+            {...register('name', { required: true })}
             placeholder="Nome da ONG"
           />
           {errors.name && <span>Nome da ONG é obrigatório!</span>}
 
           <input
-            {...register("email", { required: true })}
+            {...register('email', { required: true })}
             placeholder="E-mail da ONG"
           />
           {errors.email && <span>E-mail da ONG é obrigatório!</span>}
 
           <textarea
-            {...register("description", { required: true, maxLength: 250 })}
+            {...register('description', { required: true, maxLength: 250 })}
             placeholder="Atividade que a ONG desenvolve"
           />
-          {errors.description && <span>Atividade que a ONG desenvolve é obrigatória! Máximo de 250 caracteres!</span>}
+          {errors.description && (
+            <span>
+              Atividade que a ONG desenvolve é obrigatória! Máximo de 250
+              caracteres!
+            </span>
+          )}
 
           <ContentSelected>
             <select
-              {...register("state", { required: true })}
+              {...register('state', { required: true })}
               onChange={handleSelectState}
               value={selectedState}
             >
               <option value="">UF</option>
-              {states.map(state => (
-                <option key={state.id} value={state.sigla}>{state.nome}</option>
+              {states.map((state) => (
+                <option key={state.id} value={state.sigla}>
+                  {state.nome}
+                </option>
               ))}
             </select>
-            <select {...register("city", { required: true })}>
+            <select {...register('city', { required: true })}>
               <option value="">Cidade</option>
-              {citys.map(city => (
-                <option key={city.codigo_ibge} value={city.nome}>{city.nome}</option>
+              {citys.map((city) => (
+                <option key={city.codigo_ibge} value={city.nome}>
+                  {city.nome}
+                </option>
               ))}
             </select>
             {errors.city && <span>Cidade da ONG é obrigatória!</span>}
@@ -114,7 +128,8 @@ function RegisterONG() {
         style={customStyles}
       >
         <LabelModal>
-          Por favor, confirme os dados ONG, porque não será possível alterá-los após a confirmação.
+          Por favor, confirme os dados ONG, porque não será possível alterá-los
+          após a confirmação.
         </LabelModal>
         <form onSubmit={handleSubmit(handleConfirmFormData)}>
           <ButtonModalCancel onClick={closeModal}>Cancelar</ButtonModalCancel>
@@ -122,7 +137,7 @@ function RegisterONG() {
         </form>
       </Modal>
     </>
-  );
+  )
 }
 
-export default RegisterONG;
+export default RegisterONG

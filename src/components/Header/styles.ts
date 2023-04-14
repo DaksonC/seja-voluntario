@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import styled from 'styled-components'
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
 export const ContainerHeader = styled.div`
   width: 100vw;
@@ -10,7 +10,7 @@ export const ContainerHeader = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1rem;
-`;
+`
 
 export const ContentHeaderLogo = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const ContentHeaderLogo = styled.div`
   justify-content: center;
   gap: 1rem;
   padding: 0 1rem;
-`;
+`
 
 export const ImageLogo = styled.div`
   width: 7rem;
@@ -29,7 +29,7 @@ export const ImageLogo = styled.div`
   h3 {
     font-size: 0.65rem;
   }
-`;
+`
 
 export const ContentHeaderMenu = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ export const ContentHeaderMenu = styled.div`
   justify-content: flex-end;
   gap: 1rem;
   padding: 0 2rem;
-`;
+`
 
 export const ContentHeaderMenuItemDesktop = styled.div`
   display: block;
@@ -49,7 +49,7 @@ export const ContentHeaderMenuItemDesktop = styled.div`
   @media (max-width: 769px) {
     display: none;
   }
-`;
+`
 
 export const DropdownMenuTrigger = styled(DropdownMenu.Trigger)`
   background: transparent;
@@ -70,14 +70,14 @@ export const DropdownMenuTrigger = styled(DropdownMenu.Trigger)`
       font-size: 1.5rem;
       color: #bd93f9;
       background: #44475a;
-      
+
       &:hover {
         background: #bd93f9;
         color: #44475a;
       }
     }
   }
-`;
+`
 
 export const ContentHeaderMenuMobile = styled(DropdownMenu.Content)`
   width: 100vw;
@@ -90,7 +90,7 @@ export const ContentHeaderMenuMobile = styled(DropdownMenu.Content)`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-`;
+`
 
 export const ContentHeaderMenuMobileItem = styled(DropdownMenu.Item)`
   width: 100%;
@@ -98,7 +98,7 @@ export const ContentHeaderMenuMobileItem = styled(DropdownMenu.Item)`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`
 
 export const ButtonHome = styled.button`
   text-decoration: none;
@@ -109,8 +109,7 @@ export const ButtonHome = styled.button`
   border: 0;
   padding: 0.5rem;
   cursor: pointer;
-  
-  
+
   &:hover {
     color: #bd93f9;
   }
@@ -118,5 +117,4 @@ export const ButtonHome = styled.button`
   &:disabled {
     color: #bd93f9;
   }
-`;
-
+`

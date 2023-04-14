@@ -1,11 +1,15 @@
-import { ContainerButton } from "./styles";
+import { ContainerButton } from './styles'
 
 interface ButtonRegisterProps {
-  title: string;
-  onClick?: () => void;
+  title: string
+  onClick?: () => void
 }
 
-export function ButtonRegister({ title, onClick, ...rest }: ButtonRegisterProps) {
+export function ButtonRegister({
+  title,
+  onClick,
+  ...rest
+}: ButtonRegisterProps) {
   return (
     <ContainerButton {...rest} onClick={onClick}>
       <span>{title}</span>

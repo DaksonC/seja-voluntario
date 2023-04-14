@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
-import { BsGlobeAmericas } from "react-icons/bs";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { useRouter } from 'next/router'
+import { BsGlobeAmericas } from 'react-icons/bs'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
 import {
   ButtonHome,
@@ -13,8 +13,8 @@ import {
   ContentHeaderMenuMobileItem,
   DropdownMenuTrigger,
   ImageLogo,
-} from "./styles";
-import { ButtonRegister } from "../ButtonRegister";;
+} from './styles'
+import { ButtonRegister } from '../ButtonRegister'
 
 export function Header() {
   const router = useRouter()
@@ -31,7 +31,7 @@ export function Header() {
     router.push('/RegisterVoluntary')
   }
 
-  const isDisabled = (href: string) => router.pathname === href;
+  const isDisabled = (href: string) => router.pathname === href
 
   return (
     <ContainerHeader>

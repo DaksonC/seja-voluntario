@@ -1,11 +1,11 @@
-import Modal from "react-modal";
+import Modal from 'react-modal'
 import type { AppProps } from 'next/app'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 
 import '@/styles/globals.css'
 
-Modal.setAppElement('#__next');
+Modal.setAppElement('#__next')
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

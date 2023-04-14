@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ContainerButton = styled.button.attrs({
-  type: "button",
+  type: 'button',
 })`
   width: 14rem;
   height: 3rem;
@@ -10,12 +10,12 @@ export const ContainerButton = styled.button.attrs({
   background: #44475a;
   color: #fff;
   cursor: pointer;
-  
+
   span {
     font-size: 1rem;
     font-weight: bold;
   }
-  
+
   &:hover {
     background: #bd93f9;
     color: #44475a;
@@ -31,4 +31,4 @@ export const ContainerButton = styled.button.attrs({
   @media (max-width: 425px) {
     width: 100%;
   }
-`;
+`

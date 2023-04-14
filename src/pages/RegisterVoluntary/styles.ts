@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ContainerRegisterVoluntary = styled.div`
   width: 100%;
@@ -8,11 +8,11 @@ export const ContainerRegisterVoluntary = styled.div`
   align-items: center;
   justify-content: center;
 
-    h1 {
+  h1 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
-  
+
   form {
     width: 100%;
     max-width: 33rem;
@@ -73,6 +73,7 @@ export const ContainerRegisterVoluntary = styled.div`
     width: 100%;
     max-width: 15rem;
     height: 2rem;
+    margin-top: 3.5rem;
     margin-bottom: 1rem;
     padding: 0 1rem;
     border: 0;
@@ -81,18 +82,25 @@ export const ContainerRegisterVoluntary = styled.div`
     background: #50fa7b;
     font-weight: 600;
     transition: filter 0.2s;
-    
+
     &:hover {
       filter: brightness(0.5);
       color: #004c8c;
     }
   }
-  
-  @media (max-width: 425px) {
+
+  @media (max-width: 768px) {
     h1 {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
-    
+
+    input {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media (max-width: 425px) {
     button {
       margin-top: 4.5rem;
       margin-bottom: 0;
@@ -106,7 +114,7 @@ export const ContainerRegisterVoluntary = styled.div`
       margin-bottom: 0.5rem;
     }
   }
-`;
+`
 
 export const ContentSelected = styled.div`
   width: 100%;
@@ -118,10 +126,15 @@ export const ContentSelected = styled.div`
   height: 2rem;
   text-align: center;
 
-  @media (max-width: 425px) {
-    display: block;    
+  span {
+    width: 310%;
+    margin-top: -0.5rem;
   }
-`;
+
+  @media (max-width: 425px) {
+    display: block;
+  }
+`
 
 export const LabelModal = styled.label`
   font-size: 1.5rem;
@@ -132,7 +145,7 @@ export const LabelModal = styled.label`
   @media (max-width: 425px) {
     font-size: 1rem;
   }
-`;
+`
 
 export const ButtonModalCancel = styled.button`
   width: 100%;
@@ -151,7 +164,7 @@ export const ButtonModalCancel = styled.button`
     filter: brightness(0.5);
     color: #004c8c;
   }
-`;
+`
 
 export const ButtonModalOK = styled.button`
   width: 100%;
@@ -170,8 +183,7 @@ export const ButtonModalOK = styled.button`
     filter: brightness(0.5);
     color: #004c8c;
   }
-`;
-
+`
 
 export const customStyles = {
   overlay: {
@@ -198,4 +210,4 @@ export const customStyles = {
     alineItems: 'center',
     justifyItems: 'center',
   },
-};
+}

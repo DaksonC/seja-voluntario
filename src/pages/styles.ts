@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100vw;
@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url("/voluntary.jpg");
+  background-image: url('/voluntary.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -16,15 +16,15 @@ export const Container = styled.div`
     width: 100%;
     max-width: 770px;
     padding: 0 2.5rem;
-    background: rgba( 255, 255, 255, 0.30 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
-    backdrop-filter: blur( 13.5px );
-    -webkit-backdrop-filter: blur( 13.5px );
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.15 );
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #6272a4;
     font-size: 5rem;
-    
+
     h1 {
       margin-top: 1.5rem;
       padding-bottom: 1rem;
@@ -55,6 +55,6 @@ export const Container = styled.div`
       p {
         font-size: 0.8rem;
       }
-   }
+    }
   }
-`;
+`
