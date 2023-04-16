@@ -25,7 +25,7 @@ Como este é o primeiro projeto integrador que vocês realizam, vocês devem fic
 - MySQL
 
 # Demonstrativo
-https://user-images.githubusercontent.com/81385265/231895455-b1056eb6-3cfd-478d-bac1-cf8ba89349f8.mp4
+https://user-images.githubusercontent.com/81385265/232337481-b94f4d60-5074-43c1-9e36-97cd9993c776.mp4
 
 ## Quem participa desse projeto e com qual função?
 
